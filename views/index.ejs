@@ -1,0 +1,33 @@
+<!-- Header section  -->
+<%- include("partials/header.ejs") %>
+
+<!-- Body section  -->
+<h1>Welcome to BlogPost</h1>
+<p>
+  Discover a world of stories and insights at Blogpost, where you can read,
+  create, and share your own thoughts with a global audience. Whether you're
+  passionate about technology, travel, food, or lifestyle, our platform offers a
+  space for every voice.
+</p>
+<div class="buttons">
+  <a href="/form" class="btn">Create a New Post</a>
+</div>
+<div class="posts">
+  <h2>Posts</h2>
+  <ul>
+    <% posts.forEach((post,index) => { %>
+    <li>
+      <div class="post-items">
+        <span><a href="/about/<%= index %>"><%= post.title %></a></span>
+        <span>
+          <a href="/edit/<%= index %>">Edit Post</a>
+          <a href="/delete/<%= index %>">Delete Post</a>
+        </span>
+      </div>
+    </li>
+    <% }); %>
+  </ul>
+</div>
+
+<!-- Footer section -->
+<%- include("partials/footer.ejs") %>
