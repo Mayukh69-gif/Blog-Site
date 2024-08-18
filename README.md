@@ -24,11 +24,13 @@ This is a simple blog web application built with Node.js, Express.js, EJS, and M
 
 ## Install the dependencies:
 
-npm install
+   ```bash
+      npm install
 
-Ensure MongoDB is running locally or provide a MongoDB URI if using a cloud service.
+2. Ensure MongoDB is running locally or provide a MongoDB URI if using a cloud service.
 
-##Start the server:
-npm start
+## Start the server
+   ```bash
+      npm start
 
-Open your browser and navigate to http://localhost:3000 to see the application.
+3. Open your browser and navigate to http://localhost:3000 to see the application.
