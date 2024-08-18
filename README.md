@@ -22,15 +22,15 @@ This is a simple blog web application built with Node.js, Express.js, EJS, and M
    git clone https://github.com/your-username/blog-web-app.git
    cd blog-web-app
 
-## Install the dependencies:
+2. Install the dependencies:
 
    ```bash
       npm install
 
-2. Ensure MongoDB is running locally or provide a MongoDB URI if using a cloud service.
+3. Ensure MongoDB is running locally or provide a MongoDB URI if using a cloud service.
 
-## Start the server
+4. Start the server
    ```bash
       npm start
 
-3. Open your browser and navigate to http://localhost:3000 to see the application.
+5. Open your browser and navigate to http://localhost:3000 to see the application.
