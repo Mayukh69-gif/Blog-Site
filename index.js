@@ -40,59 +40,83 @@ app.get('/', async (req, res) => {
 // Route to render a single post
 app.get("/about/:id", async (req, res) => {
     const postId = req.params.id;
-    try {
-        const post = await Post.findById(postId);
-        if (post) {
-            res.render("about.ejs", { post: post });
-        } else {
-            res.status(404).send('Post not found');
+
+    // Check if the postId is a valid ObjectId
+    if (mongoose.Types.ObjectId.isValid(postId)) {
+        try {
+            const post = await Post.findById(postId);
+            if (post) {
+                res.render("about.ejs", { post: post });
+            } else {
+                res.status(404).send('Post not found');
+            }
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving post.');
         }
-    } catch (err) {
-        console.log(err);
-        res.status(500).send('Error retrieving post.');
+    } else {
+        res.status(400).send('Invalid post ID');
     }
 });
 
 // Route to render the edit form for a specific post
 app.get('/edit/:id', async (req, res) => {
     const postId = req.params.id;
-    try {
-        const post = await Post.findById(postId);
-        if (post) {
-            res.render('edit.ejs', { post: post, postId: postId });
-        } else {
-            res.status(404).send('Post not found');
+
+    // Check if the postId is a valid ObjectId
+    if (mongoose.Types.ObjectId.isValid(postId)) {
+        try {
+            const post = await Post.findById(postId);
+            if (post) {
+                res.render('edit.ejs', { post: post, postId: postId });
+            } else {
+                res.status(404).send('Post not found');
+            }
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error retrieving post.');
         }
-    } catch (err) {
-        console.log(err);
-        res.status(500).send('Error retrieving post.');
+    } else {
+        res.status(400).send('Invalid post ID');
     }
 });
 
 // Route to update a specific post
 app.post('/update/:id', async (req, res) => {
     const postId = req.params.id;
-    try {
-        await Post.findByIdAndUpdate(postId, {
-            title: req.body.title,
-            description: req.body.description
-        });
-        res.redirect('/');
-    } catch (err) {
-        console.log(err);
-        res.status(500).send('Error updating post.');
+
+    // Check if the postId is a valid ObjectId
+    if (mongoose.Types.ObjectId.isValid(postId)) {
+        try {
+            await Post.findByIdAndUpdate(postId, {
+                title: req.body.title,
+                description: req.body.description
+            });
+            res.redirect('/');
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error updating post.');
+        }
+    } else {
+        res.status(400).send('Invalid post ID');
     }
 });
 
 // Route to delete a specific post
 app.get("/delete/:id", async (req, res) => {
     const postId = req.params.id;
-    try {
-        await Post.findByIdAndDelete(postId);
-        res.redirect('/');
-    } catch (err) {
-        console.log(err);
-        res.status(500).send('Error deleting post.');
+
+    // Check if the postId is a valid ObjectId
+    if (mongoose.Types.ObjectId.isValid(postId)) {
+        try {
+            await Post.findByIdAndDelete(postId);
+            res.redirect('/');
+        } catch (err) {
+            console.log(err);
+            res.status(500).send('Error deleting post.');
+        }
+    } else {
+        res.status(400).send('Invalid post ID');
     }
 });
 

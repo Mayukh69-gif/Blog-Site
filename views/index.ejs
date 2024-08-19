@@ -15,13 +15,13 @@
 <div class="posts">
   <h2>Posts</h2>
   <ul>
-    <% posts.forEach((post,index) => { %>
+    <% posts.forEach((post) => { %>
     <li>
       <div class="post-items">
-        <span><a href="/about/<%= index %>"><%= post.title %></a></span>
+        <span><a href="/about/<%= post._id %>"><%= post.title %></a></span>
         <span>
-          <a href="/edit/<%= index %>">Edit Post</a>
-          <a href="/delete/<%= index %>">Delete Post</a>
+          <a href="/edit/<%= post._id %>">Edit Post</a>
+          <a href="/delete/<%= post._id %>">Delete Post</a>
         </span>
       </div>
     </li>
