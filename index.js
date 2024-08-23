@@ -23,14 +23,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route to render the form for creating a new post
 app.get('/form', (req, res) => {
-    res.render('form.ejs');
+    res.render('partials/form');
 });
 
 // Route to render the homepage with all posts
 app.get('/', async (req, res) => {
     try {
         const posts = await Post.find({});
-        res.render("index.ejs", { posts: posts });
+        res.render("partials/index", { posts: posts });
     } catch (err) {
         console.log(err);
         res.status(500).send("Error retrieving posts.");
@@ -46,7 +46,7 @@ app.get("/about/:id", async (req, res) => {
         try {
             const post = await Post.findById(postId);
             if (post) {
-                res.render("about.ejs", { post: post });
+                res.render("partials/about", { post: post });
             } else {
                 res.status(404).send('Post not found');
             }
@@ -68,7 +68,7 @@ app.get('/edit/:id', async (req, res) => {
         try {
             const post = await Post.findById(postId);
             if (post) {
-                res.render('edit.ejs', { post: post, postId: postId });
+                res.render('partials/edit', { post: post, postId: postId });
             } else {
                 res.status(404).send('Post not found');
             }

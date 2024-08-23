@@ -30,7 +30,7 @@ body {
     gap: 20px;
 }
 
-.hero-section .btn {
+.hero-section .custom-btn {
     background-color: #61dafb;
     color: #282c34;
     padding: 15px 25px;
@@ -40,10 +40,9 @@ body {
     transition: background-color 0.3s;
 }
 
-.hero-section .btn:hover {
+.hero-section .custom-btn:hover {
     background-color: #21a1f1;
 }
-
 .posts {
     margin-top: 20px;
 }
@@ -51,6 +50,10 @@ body {
 .posts ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .posts li {
@@ -58,10 +61,12 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    min-width: 75vw;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .post-items{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
 }
