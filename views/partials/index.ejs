@@ -19,7 +19,7 @@
         href="/"
         class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
       >
-        <span class="fs-4">BlogPost</span>
+        <span class="fs-4">SpectrumSphere</span>
       </a>
 
       <ul class="nav nav-pills">
@@ -33,17 +33,23 @@
   </div>
   <!-- Body section  -->
   <main class="hero-section">
-    <h1>Welcome to BlogPost</h1>
-    <p>
+    <div class="page container home-pg1 d-flex justify-content-center align-items-center">
+    <div class="page1-container p-3">
+      Welcome to SpectrumSphere
+    </div>
+  </div>
+  <div class="describe">
+    <div class="des">
       Discover a world of stories and insights at Blogpost, where you can read,
       create, and share your own thoughts with a global audience. Whether you're
       passionate about technology, travel, food, or lifestyle, our platform
       offers a space for every voice.
-    </p>
-    <div class="buttons">
-      <a href="/form" class="btn btn-outline-primary">Create a New Post</a>
     </div>
-    <div class="posts">
+  </div>
+    <div class="buttons">
+      <a href="/form" class="btn btn-outline-primary btn-lg">Create a New Post</a>
+    </div>
+    <div class="posts my-10">
       <h2>Posts</h2>
       <ul>
         <% posts.forEach((post) => { %>
