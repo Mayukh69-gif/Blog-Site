@@ -38,7 +38,7 @@ app.get('/', async (req, res) => {
 });
 
 // Route to render a single post
-app.get("/about/:id", async (req, res) => {
+app.get("/postDetails/:id", async (req, res) => {
     const postId = req.params.id;
 
     // Check if the postId is a valid ObjectId
@@ -46,7 +46,7 @@ app.get("/about/:id", async (req, res) => {
         try {
             const post = await Post.findById(postId);
             if (post) {
-                res.render("partials/about", { post: post });
+                res.render("partials/postDetails", { post: post });
             } else {
                 res.status(404).send('Post not found');
             }

@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -52,13 +56,32 @@ body {
     align-items: center;
 }
 
+.posts h2 {
+    background-image: linear-gradient(to right, #f093fb, #f5576c);
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 700;
+    font-size: 2em;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
 .posts li {
     background-color: #fff;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     min-width: 75vw;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.posts li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .post-items {
@@ -68,7 +91,7 @@ body {
 }
 
 .page1-container {
-    background-image: linear-gradient(to right,#96e6a1, #d4fc79);
+    background-image: linear-gradient(to right, #96e6a1, #d4fc79);
     color: #333333;
     width: 50%;
     font-size: 2rem;
@@ -81,15 +104,33 @@ body {
 
 .describe {
     display: flex;
-    justify-content: center; /* Centers the content horizontally */
-    text-align: center; /* Centers the text inside the div */
-    margin: 10px auto; /* Adds some vertical margin and centers the div horizontally */
-    width: 80%; /* Adjust the width as needed */
+    justify-content: center;
+    text-align: center;
+    margin: 10px auto;
+    width: 80%;
     margin-bottom: 20px;
-  }
-  
-  .des {
-    max-width: 80vw; /* Limits the width of the inner content */
-    padding: 10px; /* Adds some padding for better readability */
+}
+
+.des {
+    max-width: 80vw;
+    padding: 10px;
     font-size: 1.4rem;
-  }
+}
+
+.posts a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.page1-container {
+    background: none;
+    color: #2c3e50;
+    padding: 10px 20px;
+    font-size: 2.3rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    letter-spacing: 1px;
+    margin-bottom: -3rem;
+}

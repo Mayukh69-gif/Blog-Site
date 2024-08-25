@@ -26,8 +26,8 @@
         <li class="nav-item">
           <a href="#" class="nav-link active" aria-current="page">Home</a>
         </li>
-        <li class="nav-item"><a href="#" class="nav-link">Blogs</a></li>
         <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
       </ul>
     </header>
   </div>
@@ -40,7 +40,7 @@
   </div>
   <div class="describe">
     <div class="des">
-      Discover a world of stories and insights at Blogpost, where you can read,
+      Discover a world of stories and insights at SpectrumSphere, where you can read,
       create, and share your own thoughts with a global audience. Whether you're
       passionate about technology, travel, food, or lifestyle, our platform
       offers a space for every voice.
@@ -50,12 +50,12 @@
       <a href="/form" class="btn btn-outline-primary btn-lg">Create a New Post</a>
     </div>
     <div class="posts my-10">
-      <h2>Posts</h2>
+      <h2>Latest Posts</h2>
       <ul>
         <% posts.forEach((post) => { %>
         <li>
           <div class="post-items">
-            <span><a class="link-offset-2 link-underline link-underline-opacity-0" href="/about/<%= post._id %>"><%= post.title %></a></span>
+            <span><a class="link-offset-2 link-underline link-underline-opacity-0" href="/postDetails/<%= post._id %>"><%= post.title %></a></span>
             <span>
               <a href="/edit/<%= post._id %>" class="btn btn-success"
                 >Edit Post</a
